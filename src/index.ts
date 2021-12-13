@@ -3,7 +3,7 @@ import { JsonSchema, ParseOptions, File, Src, Properties, Definitions } from './
 
 const loadJsonFile = async (file: File): Promise<any> => {
     const content = await fs.readFile(file, 'utf8')
-    return content;
+    return JSON.parse(content);
 }
 
 const cloneMe = (obj: any, doc: JsonSchema) => {
