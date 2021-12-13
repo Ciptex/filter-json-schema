@@ -1,6 +1,6 @@
 {
   "name": "filter-json-schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Filter a Json Schema Document to remove readOnly properties. Useful for pre-processing for AJV",
   "main": "dist/index.js",
   "types": "dist/types.d.ts",
