@@ -1,0 +1,49 @@
+{
+  "name": "filter-json-schema",
+  "version": "1.0.0",
+  "description": "Filter a Json Schema Document to remove readOnly properties. Useful for pre-processing for AJV",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "bin": {
+    "filter-json-schema": "./dist/cli.js"
+  },
+  "scripts": {
+    "dev:watch": "nodemon --exec 'npm run build:js' -e ts -w src",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "prepublish": "tsc",
+    "test": "dist/cli.js test/api-schema.json > test/api-schema-write.json"
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "swagger",
+    "openapi",
+    "ajv",
+    "quicktype"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ciptex/filter-json-schema.git"
+  },
+  "author": "Matthew C Duggan",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Ciptex/filter-json-schema/issues"
+  },
+  "homepage": "https://github.com/Ciptex/filter-json-schema",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/node": "^16.11.12",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.3",
+    "typescript-coverage-report": "^0.6.1"
+  }
+}

@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+import { cwd } from 'process'
+import { resolve } from 'path'
+
+import { parse } from './index'
+
+const args = process.argv.splice(2);
+
+;(async () => {
+
+  const file = args[0] || '';
+
+  if (!file) {
+     console.log(`
+      USAGE: filter-json-schema json-schema.json
+    `)
+     return process.exit()
+  }
+
+  try {
+
+    const input: string = resolve(cwd(), file)
+
+    const schema = await parse({ input })
+    console.log(JSON.stringify(schema, null, 2))
+
+  } catch (e: unknown) {
+    console.log(e)
+  }
+})()
