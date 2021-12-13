@@ -19,7 +19,7 @@ npx filter-json-schema json-schema.json
 
 ## Usage from repository
 ```
-git clone https://github.com/rhrn/filter-json-schema.git
+git clone https://github.com/Ciptex/filter-json-schema.git
 cd filter-json-schema
 npm install
 npm run build
